@@ -7,7 +7,7 @@ resource "aws_instance" "ec2" {
   instance_type = var.instance_type
 }
 output "instance_id" {
-  value = aws_instance.afka-ec2.id
+  value = aws_instance.ec2.id
 }
 variable "region" {}
 variable "ami" {}
