@@ -1,15 +1,8 @@
-provider "aws" {
-  region = var.region
+resource "aws_instance" "myec2" {
+  ami = "ami-066784287e358dad1"
+  instance_type = "t2.micro"
 }
 
-resource "aws_instance" "ec2" {
-  ami = var.ami
-  instance_type = var.instance_type
-}
 output "instance_id" {
-  value = aws_instance.ec2.id
+  value = aws_instance.myec2.id
 }
-variable "region" {}
-variable "ami" {}
-variable "instance_type" {}
-
